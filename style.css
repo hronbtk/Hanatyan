@@ -1,0 +1,120 @@
+@charset 'UTF-8';
+body{
+    font-weight: bold;
+    font-family:"Comic Sans MS";
+}
+.header_wrapper{
+    display: flex;
+    max-width: 1024px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: space-between;
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px #999;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header_logo{
+    line-height: 50px;
+    margin-left: 20px;
+}
+.header_nav_list{
+    display: flex;
+    line-height: 50px;
+    margin-left: -15px;
+    margin-right: 20px;
+}
+.header_nav_list-item{
+    margin-left: 15px;
+}
+@media screen and (min-width:768px) {
+    .hamburger-menu{
+        display: none;
+    }
+}
+@media screen and (max-width:768px) {
+    .header_nav {
+        display: none;
+        background: #242424;
+        position: absolute;
+        top: 70px;
+        width: 100%;
+        z-index: 9999;
+      }
+      .header_nav_list {
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+      }
+      .header_nav_list-item {
+        border-bottom: solid 1px #474747;
+        margin-left: 0;
+      }
+      .header_nav_list-item:first-child {
+        border-top: solid 1px #474747;
+      }
+      .navigation__link {
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+        display: block;
+        padding: 24px 0;
+        transition: .5s;
+      }
+}
+.hamburger-menu {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border: none;
+    background: transparent;
+    appearance: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  .hamburger-menu__bar {
+    display: inline-block;
+    width: 44%;
+    height: 2px;
+    background: #242424;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .5s;
+  }
+  .hamburger-menu__bar:first-child {
+    top: 16px;
+  }
+  .hamburger-menu__bar:nth-child(2) {
+    top: 24px;
+  }
+  .hamburger-menu__bar:last-child {
+    top: 32px;
+  }
+  .hamburger-menu--open .hamburger-menu__bar {
+    top: 50%;
+  }
+  .hamburger-menu--open .hamburger-menu__bar:first-child {
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  }
+  .hamburger-menu--open .hamburger-menu__bar:last-child {
+    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  }
+  .hamburger-menu--open .hamburger-menu__bar:nth-child(2) {
+    display: none;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .navigation__link:hover {
+      background: #333;
+    }
+  }
+
+main{
+    height: 1500px;
+}
