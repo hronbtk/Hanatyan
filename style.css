@@ -193,6 +193,7 @@ body{
     margin: 0 auto;
     height: 600px;
     padding-top: unquote("min(100vh,75%)");
+    margin-bottom:5px;
     p {
         position: absolute;
         top: 50%;
