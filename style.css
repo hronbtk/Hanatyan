@@ -188,6 +188,9 @@ body{
     position: relative;
     background: url(S__15253546.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
+    max-width: 1024px;
+    margin: 0 auto;
     height: 600px;
     padding-top: unquote("min(100vh,75%)");
     p {
