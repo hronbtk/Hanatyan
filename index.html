@@ -5,44 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="destyle.css">
     <link rel="stylesheet" href="style.css">
-    <title>はなちゃん</title>
+    <title>HanaHana</title>
 </head>
 <body>
-    <header class="header_wrapper">
-        <h1 class="header_logo">
-            HanaHana
-        </h1>
-        <button class="hamburger-menu" id="js-hamburger-menu">
-            <span class="hamburger-menu__bar"></span>
-            <span class="hamburger-menu__bar"></span>
-            <span class="hamburger-menu__bar"></span>
-          </button>
-        <nav class="header_nav">
-            <ul class="header_nav_list">
-                <li class="header_nav_list-item nav_list-item"><a href="#" class="navigation__link">coming soon</a></li>
-                <li class="header_nav_list-item nav_list-item"><a href="#" class="navigation__link">coming soon</a></li>
-                <li class="header_nav_list-item nav_list-item"><a href="#" class="navigation__link">coming soon</a></li>
-            </ul>
-        </nav>
-        <nav class="_nav">
-            <ul class="_nav_list">
-                <li class="_nav_list-item nav_list-item"><a href="#" class="navigation_link">coming soon</a></li>
-                <li class="_nav_list-item nav_list-item"><a href="#" class="navigation_link">coming soon</a></li>
-                <li class="_nav_list-item nav_list-item"><a href="#" class="navigation_link">coming soon</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main class="main-container">
-        <div><img class="fadeIn" src="F85E683D-D480-4189-966A-F4D776797EF8.jpg" alt=""></div>
-        <div><img class="fadeIn" src="AF85227D-5F7C-4C1C-960F-A770D4FB78C7.jpg" alt=""></div> 
-        <div><img class="fadeIn" src="9C1A5AC1-41EF-4730-A702-B0CE1A3E99AD.jpg" alt=""></div> 
-        <div><img class="fadeIn" src="829E2A38-A747-41FA-9234-C086BF624E4A.jpg" alt=""></div> 
-        <div><img class="fadeIn" src="78EBBD19-2E6D-4867-BE48-A8A228D4861C.jpg" alt=""></div> 
-        <div><img class="fadeIn" src="5F45317D-F234-445F-8AB4-42A88C537750.jpg" alt=""></div> 
- 
-    </main>   
+    <div class="loading">
+        <div class="animation"></div>
+    </div>
+            <header class="header_wrapper">
+                <h1 class="header_logo">
+                    HanaHana
+                </h1>
+                <button class="hamburger-menu" id="js-hamburger-menu">
+                    <span class="hamburger-menu__bar"></span>
+                    <span class="hamburger-menu__bar"></span>
+                    <span class="hamburger-menu__bar"></span>
+                </button>
+                <nav class="header_nav">
+                    <ul class="header_nav_list">
+                        <li class="header_nav_list-item nav_list-item"><a href="#" class="navigation__link">coming soon</a></li>
+                        <li class="header_nav_list-item nav_list-item"><a href="#" class="navigation__link">coming soon</a></li>
+                        <li class="header_nav_list-item nav_list-item"><a href="#" class="navigation__link">coming soon</a></li>
+                    </ul>
+                </nav>
+                <nav class="_nav">
+                    <ul class="_nav_list">
+                        <li class="_nav_list-item nav_list-item"><a href="#" class="navigation_link">coming soon</a></li>
+                        <li class="_nav_list-item nav_list-item"><a href="#" class="navigation_link">coming soon</a></li>
+                        <li class="_nav_list-item nav_list-item"><a href="#" class="navigation_link">coming soon</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <!-- パララックスあり -->
+
+            <div class="first-v2" id="parallax-01">
+                <p>はなちゃん<br>最高</p>
+            </div>
+            <main class="main-container">
+                <div><img class="fadeIn" src="/history/F85E683D-D480-4189-966A-F4D776797EF8.jpg" alt=""></div>
+                <div><img class="fadeIn" src="/history/AF85227D-5F7C-4C1C-960F-A770D4FB78C7.jpg" alt=""></div> 
+                <div><img class="fadeIn" src="/history/9C1A5AC1-41EF-4730-A702-B0CE1A3E99AD.jpg" alt=""></div> 
+                <div><img class="fadeIn" src="/history/829E2A38-A747-41FA-9234-C086BF624E4A.jpg" alt=""></div> 
+                <div><img class="fadeIn" src="/history/78EBBD19-2E6D-4867-BE48-A8A228D4861C.jpg" alt=""></div> 
+                <div><img class="fadeIn" src="/history/5F45317D-F234-445F-8AB4-42A88C537750.jpg" alt=""></div> 
+        
+            </main>   
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.js"></script> -->
     <script>
         $(function () {
             $('#js-hamburger-menu, .navigation__link').on('click', function () {
@@ -59,11 +67,34 @@
             }else{
                 $(this).removeClass('scrollIn');
             }
+            });
+            });
+            // ロード画面
+            $(function(){
+                $(window).on('load', function(){
+                    $('.loading').delay(1500).fadeOut(300);
+                });
+                function stopload(){
+                    $('.loading').delay(1000).fadeOut(700);
+                }
+                setTimeout('stopload()',10000);
+            });
+            $(function () {
+            var target1 = $("#parallax-01");
+            var targetPosOT1 = target1.offset().top;
+            var targetFactor = 0.5;
+            var windowH = $(window).height();
+            var scrollYStart1 = targetPosOT1 - windowH;
+            $(window).on('scroll', function () {
+                var scrollY = $(this).scrollTop();
+                if (scrollY > scrollYStart1) {
+                    target1.css('background-position-y', (scrollY - targetPosOT1) * targetFactor + 'px');
+                } 
+            });
+            });
         });
-    });
-        });
+
 
     </script>
-
 </body>
 </html>
