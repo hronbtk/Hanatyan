@@ -35,18 +35,29 @@
                     </ul>
                 </nav>
             </header>
-            <!-- パララックスあり -->
 
-            <div class="first-v2" id="parallax-01">
-                <p>はなちゃん<br>最高</p>
+            
+            <div class="img-frame">
+                <div class="img-01"></div>
+                <div class="img-02"></div>
+                <div class="img-03"></div>
             </div>
             <main class="main-container">
-                <div><img class="fadeIn" src="F85E683D-D480-4189-966A-F4D776797EF8.jpg" alt=""></div>
-                <div><img class="fadeIn" src="AF85227D-5F7C-4C1C-960F-A770D4FB78C7.jpg" alt=""></div> 
-                <div><img class="fadeIn" src="9C1A5AC1-41EF-4730-A702-B0CE1A3E99AD.jpg" alt=""></div> 
-                <div><img class="fadeIn" src="829E2A38-A747-41FA-9234-C086BF624E4A.jpg" alt=""></div> 
-                <div><img class="fadeIn" src="78EBBD19-2E6D-4867-BE48-A8A228D4861C.jpg" alt=""></div> 
-                <div><img class="fadeIn" src="5F45317D-F234-445F-8AB4-42A88C537750.jpg" alt=""></div> 
+                
+                <h2 class="fadeIn ">Log</h2>
+                <div>
+                    <p class="fadeIn-text">歩いて倉敷駅から帰った日</p>
+                    <img class="fadeIn fadeIn-img _01" src="F85E683D-D480-4189-966A-F4D776797EF8.jpg" alt="">
+                    <div class="slidetoggle">ここに写真を入れる</div>
+                </div> 
+                <div>
+                    <img class="fadeIn fadeIn-img _02" src="AF85227D-5F7C-4C1C-960F-A770D4FB78C7.jpg" alt="">
+                    
+                </div> 
+                <div><a href="#"><img class="fadeIn fadeIn-img _03" src="9C1A5AC1-41EF-4730-A702-B0CE1A3E99AD.jpg" alt=""></a></div> 
+                <div><a href="#"><img class="fadeIn fadeIn-img _04" src="829E2A38-A747-41FA-9234-C086BF624E4A.jpg" alt=""></a></div> 
+                <div><a href="#"><img class="fadeIn fadeIn-img _05" src="78EBBD19-2E6D-4867-BE48-A8A228D4861C.jpg" alt=""></a></div> 
+                <div><a href="#"><img class="fadeIn fadeIn-img _06" src="5F45317D-F234-445F-8AB4-42A88C537750.jpg" alt=""></a></div> 
         
             </main>   
 
@@ -79,21 +90,29 @@
                 }
                 setTimeout('stopload()',10000);
             });
-            $(function () {
-            var target1 = $("#parallax-01");
-            var targetPosOT1 = target1.offset().top;
-            var targetFactor = 0.5;
-            var windowH = $(window).height();
-            var scrollYStart1 = targetPosOT1 - windowH;
-            $(window).on('scroll', function () {
-                var scrollY = $(this).scrollTop();
-                if (scrollY > scrollYStart1) {
-                    target1.css('background-position-y', (scrollY - targetPosOT1) * targetFactor + 'px');
-                } 
+              //.accordion_oneの中の.accordion_headerがクリックされたら
+            $('.s_06 .accordion_one .accordion_header').click(function(){
+                //クリックされた.accordion_oneの中の.accordion_headerに隣接する.accordion_innerが開いたり閉じたりする。
+                $(this).next('.accordion_inner').slideToggle();
+                $(this).toggleClass("open");
+                //クリックされた.accordion_oneの中の.accordion_header以外の.accordion_oneの中の.accordion_headerに隣接する.accordion_oneの中の.accordion_innerを閉じる
+                $('.s_06 .accordion_one .accordion_header').not($(this)).next('.accordion_one .accordion_inner').slideUp();
+                $('.s_06 .accordion_one .accordion_header').not($(this)).removeClass("open");
             });
-            });
-        });
-
+            //閉じるボタンがクリックされたら
+            $('a.close_btn').click(function () {
+                    //クリックされたa.close_btnの親要素の.accordion_oneの.accordion_innerを閉じる。
+                    $(this).parents('.s_06 .accordion_one .accordion_inner').slideUp();
+                    $('.s_06 .accordion_one .accordion_header').removeClass("open");
+                });
+                $(function(){
+                    //クリックされたら
+                    $("._01").on("click",function(){
+                        //中身をスライドさせながら表示非表示
+                        $(this).next().slideToggle(500);
+                    });//end click
+                });//end function
+                        });
 
     </script>
 </body>
