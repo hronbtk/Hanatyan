@@ -8,11 +8,11 @@ body {
 .header {
   width: 100vw;
   position: fixed;
-  z-index: 102;
+  z-index: 100;
 }
 
 .header-wrapper {
-  width: 100%;
+    width: 50%;
   display: flex;
   justify-content: space-between;
 }
@@ -230,7 +230,7 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 46.8%;
+  top: 49.8%;
   line-height: 1.5;
   letter-spacing: 0.1em;
   font-size: 3.7333333333vw;
