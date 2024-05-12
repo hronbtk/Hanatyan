@@ -19,7 +19,7 @@
 </div>
 <nav class="header-nav">
     <ul class="header-nav-list">
-        <list class="header-nav-list-item"><a href="#about">About<span>私たち</span></a></list>
+        <list class="header-nav-list-item"><a href="#about">About <span>私たち</span></a></list>
         <list class="header-nav-list-item"><a href="#">coming soon <span>準備中</span></a></list>
         <list class="header-nav-list-item"><a href="#">coming soon <span>準備中</span></a></list>
         <list class="header-nav-list-item"><a href="#">coming soon <span>準備中</span></a></list>
@@ -65,8 +65,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
     $(function(){
-        $('.humberger-menu').click(function(){
-            $('.humberger-bar,.header-nav').toggleClass('active');
+        $('.humberger-menu,.header-nav').click(function(){
+            $('.humberger-bar').toggleClass('active');
             $('.header-nav').toggleClass('visible');
         });
     });
