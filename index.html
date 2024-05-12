@@ -5,115 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="destyle.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="top.css">
     <title>HanaHana</title>
 </head>
 <body>
-    <div class="loading">
-        <div class="animation"></div>
+<header class="header">
+    <div class="header-wrapper">
+        <h1 class="header-logo"><a href="#"><img src="logo.png" alt="Hana"></a></h1>
     </div>
-            <header class="header_wrapper">
-                <h1 class="header_logo">
-                    HanaHana
-                </h1>
-                <button class="hamburger-menu" id="js-hamburger-menu">
-                    <span class="hamburger-menu__bar"></span>
-                    <span class="hamburger-menu__bar"></span>
-                    <span class="hamburger-menu__bar"></span>
-                </button>
-                <nav class="header_nav">
-                    <ul class="header_nav_list">
-                        <li class="header_nav_list-item nav_list-item"><a href="#" class="navigation__link">coming soon</a></li>
-                        <li class="header_nav_list-item nav_list-item"><a href="#" class="navigation__link">coming soon</a></li>
-                        <li class="header_nav_list-item nav_list-item"><a href="#" class="navigation__link">coming soon</a></li>
-                    </ul>
-                </nav>
-                <nav class="_nav">
-                    <ul class="_nav_list">
-                        <li class="_nav_list-item nav_list-item"><a href="#" class="navigation_link">coming soon</a></li>
-                        <li class="_nav_list-item nav_list-item"><a href="#" class="navigation_link">coming soon</a></li>
-                        <li class="_nav_list-item nav_list-item"><a href="#" class="navigation_link">coming soon</a></li>
-                    </ul>
-                </nav>
-            </header>
-
-            
-            <div class="img-frame">
-                <div class="img-01"></div>
-                <div class="img-02"></div>
-                <div class="img-03"></div>
-            </div>
-            <main class="main-container">
-                
-                <h2 class="fadeIn ">Log</h2>
-                <div>
-                    <p class="fadeIn-text">歩いて倉敷駅から帰った日</p>
-                    <img class="fadeIn fadeIn-img _01" src="F85E683D-D480-4189-966A-F4D776797EF8.jpg" alt="">
-                    <div class="slidetoggle">ここに写真を入れる</div>
-                </div> 
-                <div>
-                    <img class="fadeIn fadeIn-img _02" src="AF85227D-5F7C-4C1C-960F-A770D4FB78C7.jpg" alt="">
-                    
-                </div> 
-                <div><a href="#"><img class="fadeIn fadeIn-img _03" src="9C1A5AC1-41EF-4730-A702-B0CE1A3E99AD.jpg" alt=""></a></div> 
-                <div><a href="#"><img class="fadeIn fadeIn-img _04" src="829E2A38-A747-41FA-9234-C086BF624E4A.jpg" alt=""></a></div> 
-                <div><a href="#"><img class="fadeIn fadeIn-img _05" src="78EBBD19-2E6D-4867-BE48-A8A228D4861C.jpg" alt=""></a></div> 
-                <div><a href="#"><img class="fadeIn fadeIn-img _06" src="5F45317D-F234-445F-8AB4-42A88C537750.jpg" alt=""></a></div> 
-        
-            </main>   
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
-        $(function () {
-            $('#js-hamburger-menu, .navigation__link').on('click', function () {
-            $('.header_nav').slideToggle(500)
-            $('.hamburger-menu').toggleClass('hamburger-menu--open')
-            });
-            $(window).scroll(function (){
-            $('.fadeIn').each(function(){
-            var elemPos = $(this).offset().top,
-            scroll = $(window).scrollTop(),
-            windowHeight = $(window).height();
-            if (scroll > elemPos - windowHeight + 100){
-              $(this).addClass('scrollIn');
-            }else{
-                $(this).removeClass('scrollIn');
-            }
-            });
-            });
-            // ロード画面
-            $(function(){
-                $(window).on('load', function(){
-                    $('.loading').delay(1500).fadeOut(300);
-                });
-                function stopload(){
-                    $('.loading').delay(1000).fadeOut(700);
-                }
-                setTimeout('stopload()',10000);
-            });
-              //.accordion_oneの中の.accordion_headerがクリックされたら
-            $('.s_06 .accordion_one .accordion_header').click(function(){
-                //クリックされた.accordion_oneの中の.accordion_headerに隣接する.accordion_innerが開いたり閉じたりする。
-                $(this).next('.accordion_inner').slideToggle();
-                $(this).toggleClass("open");
-                //クリックされた.accordion_oneの中の.accordion_header以外の.accordion_oneの中の.accordion_headerに隣接する.accordion_oneの中の.accordion_innerを閉じる
-                $('.s_06 .accordion_one .accordion_header').not($(this)).next('.accordion_one .accordion_inner').slideUp();
-                $('.s_06 .accordion_one .accordion_header').not($(this)).removeClass("open");
-            });
-            //閉じるボタンがクリックされたら
-            $('a.close_btn').click(function () {
-                    //クリックされたa.close_btnの親要素の.accordion_oneの.accordion_innerを閉じる。
-                    $(this).parents('.s_06 .accordion_one .accordion_inner').slideUp();
-                    $('.s_06 .accordion_one .accordion_header').removeClass("open");
-                });
-                $(function(){
-                    //クリックされたら
-                    $("._01").on("click",function(){
-                        //中身をスライドさせながら表示非表示
-                        $(this).next().slideToggle(500);
-                    });//end click
-                });//end function
-                        });
-
-    </script>
+</header>
+<div class="humberger-menu">
+    <span class="humberger-bar"></span>
+</div>
+<nav class="header-nav">
+    <ul class="header-nav-list">
+        <list class="header-nav-list-item"><a href="#">coming soon <span>準備中</span></a></list>
+        <list class="header-nav-list-item"><a href="#">coming soon <span>準備中</span></a></list>
+        <list class="header-nav-list-item"><a href="#">coming soon <span>準備中</span></a></list>
+        <list class="header-nav-list-item"><a href="#">coming soon <span>準備中</span></a></list>
+        <list class="header-nav-list-item"><a href="#">coming soon <span>準備中</span></a></list>
+        <list class="header-nav-list-item"><a href="#">coming soon <span>準備中</span></a></list>
+        <list class="header-nav-list-item"><a href="#"><button>coming soon</button></a></list>
+    </ul>
+</nav>
+<div class="roop">
+    <h2 class="title">
+        はなとおれ
+    </h2>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    $(function(){
+        $('.humberger-menu').click(function(){
+            $('.humberger-bar').toggleClass('active');
+            $('.header-nav').toggleClass('visible');
+        });
+    });
+</script>
 </body>
 </html>
