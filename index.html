@@ -20,7 +20,7 @@
 <nav class="header-nav">
     <ul class="header-nav-list">
         <list class="header-nav-list-item"><a href="#about">About <span>私たち</span></a></list>
-        <list class="header-nav-list-item"><a href="#">coming soon <span>準備中</span></a></list>
+        <list class="header-nav-list-item"><a href="#news">News <span>ニュース</span></a></list>
         <list class="header-nav-list-item"><a href="#">coming soon <span>準備中</span></a></list>
         <list class="header-nav-list-item"><a href="#">coming soon <span>準備中</span></a></list>
         <list class="header-nav-list-item"><a href="#">coming soon <span>準備中</span></a></list>
@@ -41,14 +41,14 @@
         <span class="scroll-text">scroll down</span>
     </div>
 </div>
-<section id="about" class="contents">
-    <div class="contents-inner">
-        <div class="contents-inner-img img1"><img src="contents1.jpg" alt=""></div>
-        <div class="contents-inner-img img2"><img src="contents2.jpg" alt=""></div>
-        <div class="contents-inner-img img3"><img src="contents3.jpg" alt=""></div>
-        <div class="contents-inner-img img4"><img src="contents4.jpg" alt=""></div>
-        <div class="contents-inner-img img5"><img src="contents5.jpg" alt=""></div>
-        <div class="contents-inner-img img6"><img src="contents6.jpg" alt=""></div>
+<section id="about" class="about-contents">
+    <div class="about-contents-inner">
+        <div class="about-contents-inner-img img1"><img src="contents1.jpg" alt=""></div>
+        <div class="about-contents-inner-img img2"><img src="contents2.jpg" alt=""></div>
+        <div class="about-contents-inner-img img3"><img src="contents3.jpg" alt=""></div>
+        <div class="about-contents-inner-img img4"><img src="contents4.jpg" alt=""></div>
+        <div class="about-contents-inner-img img5"><img src="contents5.jpg" alt=""></div>
+        <div class="about-contents-inner-img img6"><img src="contents6.jpg" alt=""></div>
     </div>
     <p>PASSION と LOVE で、<br class="pcNone">Hanaはできている。<br>
         ひろ君への熱量。<br>
@@ -60,14 +60,55 @@
         ひろ君を想うからこそのおせっかい。<br>
         Hanaの真ん中に燃えるのは、<br class="pcNone">LOVE とも言われるエネルギー。<br>
         Hanaの想いが広がる未来、<br class="pcNone">たとえ時代が変わっても変わらないもの。<br>
-        Hana は PASSIONと LOVE で、<br class="pcNone">ひろ君と関わっていく。</p>
+        Hana は PASSIONと LOVE で、<br class="pcNone">ひろ君と関わっていく。
+    </p>
+    <a href="#" class="view-all">
+        <span class="view-all-text">VIEW ALL</span>
+        <div>
+            <span class="view-all-right"></span>
+        </div>
+    </a>
+</section>
+<section id="news" class="news-contentes">
+    <h3 class="news-contents-title">
+        log
+        <span>記録</span>
+    </h3>
+    <div class="swiper-wrapper">
+        <div class="news-contents-box">
+            <img src="/history/eightball/LINE_ALBUM_2024.3.30_240513_1.jpg" alt="" class="news-contents-img">
+            <span class="contents-date">2024.3.30</span>
+            <span>eight ball fes</span>
+        </div>
+        <div class="news-contents-box">
+            <img src="/history/neotoyoji/LINE_ALBUM_2024.2.23_240513_2.jpg" alt="" class="news-contents-img">
+            <span>2024.2.23</span>
+            <span>NEO toyoji</span>
+        </div>
+        <div class="news-contents-box">
+            <img src="/history/eightball/LINE_ALBUM_2024.3.30_240513_1.jpg" alt="" class="news-contents-img">
+            <span>2024.3.30</span>
+            <span>eight ball fes</span>
+        </div>
+        <div class="news-contents-box">
+            <img src="/history/eightball/LINE_ALBUM_2024.3.30_240513_1.jpg" alt="" class="news-contents-img">
+            <span>2024.3.30</span>
+            <span>eight ball fes</span>
+        </div>
+    </div>
+    <a href="#" class="view-all contents-position">
+        <span class="view-all-text">VIEW ALL</span>
+        <div>
+            <span class="view-all-right"></span>
+        </div>
+    </a>
 </section>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
     $(function(){
         $('.humberger-menu,.header-nav').click(function(){
             $('.humberger-bar').toggleClass('active');
-            $('.header-nav').toggleClass('visible');
+            $('.header-nav').toggleClass('visible')
         });
     });
 </script>
