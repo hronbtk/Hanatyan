@@ -14,13 +14,14 @@ body{
     position: fixed;
     top: 0;
     left: 0;
-    animation: loading 3s forwards;
+    animation: loading 5s forwards;
 }
 .loading-text{
     font-family: Hannotate SC;
     font-size: 32px;
     span{
         transform: translateY(20px);
+        opacity: 0;
     }
     span:first-child{
         animation: fadeIn 0.7s forwards .5s ;
@@ -35,14 +36,16 @@ body{
         animation: fadeIn 0.7s forwards 2s ;
     }
 }
-@keyframes loding{
+@keyframes loading{
     0%{
         opacity: 1;
     }
     90%{
+        height:  100%;
         opacity: 1;
     }
     100%{
+        height: 0;
         opacity: 0;
     }
 }
