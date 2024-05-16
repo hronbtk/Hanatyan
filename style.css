@@ -20,10 +20,11 @@ body {
 .loading-text {
   font-family: Hannotate SC;
   font-size: 32px;
+  display: flex;
 }
 .loading-text span {
-  transform: translateY(20px);
   opacity: 0;
+  display: block;
 }
 .loading-text span:first-child {
   animation: fadeIn 0.7s forwards 0.5s;
@@ -52,13 +53,20 @@ body {
   }
 }
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
+  /* 0% {
     opacity: 1;
-    transform: translateY(0);
+    transform:rotate(0) ; 
+   }
+  50% {
+    opacity: rotate(180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(360deg);
+  } */
+  to{
+    transform: rotateY(360deg);
+    opacity: 1;
   }
 }
 .header {
@@ -130,6 +138,8 @@ body {
 .header-nav-list {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  height: 100vh;
   background-color: orangered;
 }
 
@@ -138,7 +148,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 16.6666666667vh;
+  height: 14vh;
   text-align: center;
 }
 .header-nav-list-item span {
