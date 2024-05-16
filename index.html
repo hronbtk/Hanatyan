@@ -49,14 +49,14 @@
 </div>
 <section id="about" class="about-contents">
     <div class="about-contents-inner">
-        <div class="about-contents-inner-img img1"><img src="contents1.jpg" alt=""></div>
-        <div class="about-contents-inner-img img2"><img src="contents2.jpg" alt=""></div>
-        <div class="about-contents-inner-img img3"><img src="contents3.jpg" alt=""></div>
-        <div class="about-contents-inner-img img4"><img src="contents4.jpg" alt=""></div>
-        <div class="about-contents-inner-img img5"><img src="contents5.jpg" alt=""></div>
-        <div class="about-contents-inner-img img6"><img src="contents6.jpg" alt=""></div>
+        <div class="about-contents-inner-img img1 js-fade"><img src="contents1.jpg" alt=""></div>
+        <div class="about-contents-inner-img img2 js-fade"><img src="contents2.jpg" alt=""></div>
+        <div class="about-contents-inner-img img3 js-fade"><img src="contents3.jpg" alt=""></div>
+        <div class="about-contents-inner-img img4 js-fade"><img src="contents4.jpg" alt=""></div>
+        <div class="about-contents-inner-img img5 js-fade"><img src="contents5.jpg" alt=""></div>
+        <div class="about-contents-inner-img img6 js-fade"><img src="contents6.jpg" alt=""></div>
     </div>
-    <p>PASSION と LOVE で、<br class="pcNone">Hanaはできている。<br>
+    <p class="js-fade">PASSION と LOVE で、<br class="pcNone">Hanaはできている。<br>
         ひろ君への熱量。<br>
         ひろ君が大好きという想い。<br>
         ひろ君は人生にとって大切なもの。<br>
@@ -68,7 +68,7 @@
         Hanaの想いが広がる未来、<br class="pcNone">たとえ時代が変わっても変わらないもの。<br>
         Hana は PASSIONと LOVE で、<br class="pcNone">ひろ君と関わっていく。
     </p>
-    <a href="#" class="view-all">
+    <a href="#" class="view-all js-fade">
         <span class="view-all-text">VIEW ALL</span>
         <div>
             <span class="view-all-right"></span>
@@ -76,33 +76,33 @@
     </a>
 </section>
 <section id="news" class="news-contentes">
-    <h3 class="news-contents-title">
+    <h3 class="news-contents-title js-fade">
         log
         <span>記録</span>
     </h3>
     <div class="swiper-wrapper">
-        <div class="news-contents-box">
+        <div class="news-contents-box js-fade">
             <img src="eightball/LINE_ALBUM_2024.3.30_240513_1.jpg" alt="" class="news-contents-img">
             <span class="contents-date">2024.3.30</span>
             <span>eight ball fes</span>
         </div>
-        <div class="news-contents-box">
+        <div class="news-contents-box js-fade">
             <img src="neotoyoji/LINE_ALBUM_2024.2.23_240513_2.jpg" alt="" class="news-contents-img">
             <span>2024.2.23</span>
             <span>NEO toyoji</span>
         </div>
-        <div class="news-contents-box">
+        <div class="news-contents-box js-fade">
             <img src="eightball/LINE_ALBUM_2024.3.30_240513_1.jpg" alt="" class="news-contents-img">
             <span>2024.3.30</span>
             <span>eight ball fes</span>
         </div>
-        <div class="news-contents-box">
+        <div class="news-contents-box js-fade">
             <img src="eightball/LINE_ALBUM_2024.3.30_240513_1.jpg" alt="" class="news-contents-img">
             <span>2024.3.30</span>
             <span>eight ball fes</span>
         </div>
     </div>
-    <a href="#" class="view-all contents-position">
+    <a href="#" class="view-all contents-position js-fade">
         <span class="view-all-text">VIEW ALL</span>
         <div>
             <span class="view-all-right"></span>
@@ -110,7 +110,7 @@
     </a>
 </section>
 <section id="galary" class="slider-area">
-    <h3 class="news-contents-title">
+    <h3 class="news-contents-title js-fade">
         gallery
         <span>ギャラリー</span>
     </h3>
@@ -176,7 +176,7 @@
             <li class="slider-item1"><img src="eightball/LINE_ALBUM_2024.3.30_240513_21jpg" alt=""><div></div></li>
         </ul>
     </div>
-    <a href="#" class="view-all slider-position">
+    <a href="#" class="view-all slider-position js-fade">
         <span class="view-all-text">VIEW ALL</span>
         <div>
             <span class="view-all-right"></span>
@@ -189,6 +189,16 @@
         $('.humberger-menu,.header-nav').click(function(){
             $('.humberger-bar').toggleClass('active');
             $('.header-nav').toggleClass('visible')
+        });
+        $(window).scroll(function(){
+            $('.js-fade').each(function(){
+                var pos = $(this).offset().top;
+                var scroll = $(window).scrollTop();
+                var windowHeight = $(window).height();
+                if(scroll > pos - windowHeight + 100){
+                    $(this).addClass('scroll')
+                }
+            });
         });
     });
 </script>
